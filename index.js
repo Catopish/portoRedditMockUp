@@ -56,10 +56,15 @@ app.get("/r/:subreddit", async (req, res) => {
     `https://www.reddit.com/r/${subreddit}/hot.json`,
   );
   const redditApi = response.data.data.children;
-  if (redditApi) {
-    res.render("subreddit", { redditApi });
-  } else {
-    res.send("failed");
+  try {
+    if (redditApi) {
+      res.render("subreddit", { redditApi });
+    } else {
+      res.send("failed");
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An error occurred while fetching subreddit data.");
   }
 });
 
