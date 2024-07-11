@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header') %>
+  <body>
+
+    <%- include('partials/navbar') %>
+    <% for (let i=0; i < 8 ; i++) { %>
+    <li>
+      <img class='logo' src="<%= footballapi[i].image_path   %>" alt="">
+      Liga <%= footballapi[i].name %>
+    </li>
+    <% } %>
+  </body>
+</html>

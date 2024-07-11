@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header') %>
+
+  <body>
+    <%- include('partials/navbar') %>
+      <h2>Live Update : <%= Date() %>
+      </h2>
+      <ul>
+
+        <% for (let i=0; i < 8 ; i++) { %>
+          <div class="card" style="width:75%;">
+            <% if ( redditApi[i].data.preview ) { %>
+              <img src="<%= redditApi[i].data.url %>" class="card-img-top" alt="..." style="max-width: 20%;">
+              <% } else { %>
+                <img src="https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage-760x460.png"
+                  class="card-img-top" alt="..." style="max-width: 20%;">
+                <% } %>
+                  <div class="card-body">
+                    <h5 class="card-title>">
+                      <%=redditApi[i].data.title %>
+                    </h5>
+                    <p class="card-text">
+                      <%= redditApi[i].data.selftext %>
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+          </div>
+          <% } %>
+
+      </ul>
+
+  </body>
+
+</html>
