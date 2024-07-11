@@ -4,11 +4,16 @@
 
   <body>
     <%- include('partials/navbar') %>
-
-      <form action='/show' method='get'>
-        <input type="text" name="Q" id='searchbar' placeholder='choose league' value="">
-        <button type="submit">Search</button>
+      <form action='/r/' method='get'>
+        <div class="mb-3" style="display: inline;">
+          <label for="searchbar" class="form-label">Custom Subreddit</label>
+          <input type="text" class="form-control" id="searchbar" name="q" placeholder="Search r/subreddit"
+            style="width: 50%;">
+          <div id="searchbarhelp" class="form-text">*only work if you have vpn natively on your OS</div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="display: inline;">Submit</button>
       </form>
+
 
   </body>
 

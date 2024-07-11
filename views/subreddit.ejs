@@ -8,13 +8,13 @@
       </h2>
       <ul>
 
-        <% for (let i=0; i < 8 ; i++) { %>
-          <div class="card" style="width:75%;">
+        <% for (let i=2; i < 8 ; i++) { %>
+          <div class="card" style="width:50% position:justify-center">
             <% if ( redditApi[i].data.preview ) { %>
               <img src="<%= redditApi[i].data.url %>" class="card-img-top" alt="..." style="max-width: 20%;">
               <% } else { %>
-                <img src="https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage-760x460.png"
-                  class="card-img-top" alt="..." style="max-width: 20%;">
+                <!-- <img src="https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage-760x460.png" -->
+                <!--   class="card-img-top" alt="..." style="max-width: 20%;"> -->
                 <% } %>
                   <div class="card-body">
                     <h5 class="card-title>">
@@ -23,7 +23,11 @@
                     <p class="card-text">
                       <%= redditApi[i].data.selftext %>
                     </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Nice Post!</li>
+                      <li class="list-group-item">Kill your self</li>
+                    </ul>
+                    <a href="/comments/new" class="btn btn-primary">new comment</a>
                   </div>
           </div>
           <% } %>
